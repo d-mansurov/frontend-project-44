@@ -1,6 +1,7 @@
 {
   "name": "@hexlet/code",
   "bin": {
+    "brain-even": "bin/brain-even.js",
     "brain-games": "bin/brain-games.js"
   },
   "type": "module",

@@ -1,7 +1,7 @@
 install: 
 	npm ci
 run: 
-	bin/brain-games.js
+	bin/brain-even.js
 publish: 
 	npm publish --dry-run
 lint: 

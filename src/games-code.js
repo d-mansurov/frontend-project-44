@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import readlineSync from 'readline-sync';
 
 const brainEven = () => {
@@ -15,9 +14,17 @@ const brainEven = () => {
     } else if ((item % 2 !== 0) && (userAnswer === 'no')) {
       console.log('Correct!');
     } else {
-      console.log(`${userAnswer} is wrong answer :(. Correct answer was 'no'`);
-      break;
-    }
+      if (userAnswer === 'yes') {
+        console.log(`'${userAnswer}' is wrong answer :( Correct answer was 'no'`);
+        return;
+      } else if (userAnswer === 'no') {
+        console.log(`'${userAnswer}' is wrong answer :( Correct answer was 'yes'`);
+        return;
+      } else {
+        console.log(`There is no such asnwer '${userAnswer}' :( You should type 'yes' or 'no'`);
+        return;
+      }
+      }
   }
   console.log(`Congratulations, ${userName}`);
 };

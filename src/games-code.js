@@ -40,15 +40,15 @@ const brainEven = () => {
       console.log('Correct!');
     } else if ((currentNumber % 2 !== 0) && (userAnswer === 'yes')) {
       console.log(`'${userAnswer}' is wrong answer :( Correct answer was 'no'`);
-      console.log(`Let's try again, ${userName}`);
+      console.log(`Let's try again, ${userName}!`);
       return;
     } else if ((currentNumber % 2 === 0) && (userAnswer === 'no')) {
       console.log(`'${userAnswer}' is wrong answer :( Correct answer was 'yes'`);
-      console.log(`Let's try again, ${userName}`);
+      console.log(`Let's try again, ${userName}!`);
       return;
     } else {
       console.log(`There is no such asnwer '${userAnswer}' :( You should type 'yes' or 'no'`);
-      console.log(`Let's try again, ${userName}`);
+      console.log(`Let's try again, ${userName}!`);
       return;
     }
   }
@@ -83,7 +83,7 @@ const brainCalc = () => {
       console.log('Correct!');
     } else {
       console.log(`'${userAnswer}' is wrong answer :( Correct answer was '${currentCorrectAnswer}'`);
-      console.log(`Let's try again, ${userName}`);
+      console.log(`Let's try again, ${userName}!`);
       return;
     }
   }
@@ -114,7 +114,7 @@ const brainGcd = () => {
       console.log('Correct!');
     } else {
       console.log(`'${userAnswer}' is wrong answer :( Correct answer was '${currentCorrectAnswer}'`);
-      console.log(`Let's try again, ${userName}`);
+      console.log(`Let's try again, ${userName}!`);
       return;
     }
   }
@@ -141,7 +141,7 @@ const brainProgression = () => {
       console.log('Correct!');
     } else {
       console.log(`'${userAnswer}' is wrong answer :( Correct answer was '${currentElement}'`);
-      console.log(`Let's try again, ${userName}`);
+      console.log(`Let's try again, ${userName}!`);
       return;
     }
   }
@@ -178,15 +178,15 @@ const brainPrime = () => {
       console.log('Correct!');
     } else if ((isPrime(currentNumber) === false) && (userAnswer === 'yes')) {
       console.log(`'${userAnswer}' is wrong answer :( Correct answer was 'no'`);
-      console.log(`Let's try again, ${userName}`);
+      console.log(`Let's try again, ${userName}!`);
       return;
     } else if ((isPrime(currentNumber) === true) && (userAnswer === 'no')) {
       console.log(`'${userAnswer}' is wrong answer :( Correct answer was 'yes'`);
-      console.log(`Let's try again, ${userName}`);
+      console.log(`Let's try again, ${userName}!`);
       return;
     } else {
       console.log(`There is no such asnwer '${userAnswer}' :( You should type 'yes' or 'no'`);
-      console.log(`Let's try again, ${userName}`);
+      console.log(`Let's try again, ${userName}!`);
       return;
     }
   }

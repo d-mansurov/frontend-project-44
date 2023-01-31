@@ -26,7 +26,7 @@ const getRandomProgression = (length, commonDifference) => {
 // Code for 'Brain-Even' game:
 const brainEven = () => {
   const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello ${userName}!`);
+  console.log(`Hello, ${userName}!`);
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
   for (let i = 0; i <= 2; i += 1) {
@@ -58,7 +58,7 @@ const brainEven = () => {
 // Code for 'Brain-Calc' game:
 const brainCalc = () => {
   const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello ${userName}!`);
+  console.log(`Hello, ${userName}!`);
   console.log('What is the result of the expression?');
 
   for (let i = 0; i <= 2; i += 1) {
@@ -93,7 +93,7 @@ const brainCalc = () => {
 // Code for 'Brain-GCD' game:
 const brainGcd = () => {
   const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello ${userName}!`);
+  console.log(`Hello, ${userName}!`);
   console.log('Find the greatest common divisor of given numbers.');
 
   for (let i = 0; i <= 2; i += 1) {
@@ -124,7 +124,7 @@ const brainGcd = () => {
 // Code for 'Brain-Progression' game:
 const brainProgression = () => {
   const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello ${userName}!`);
+  console.log(`Hello, ${userName}!`);
   console.log('What number is missing in the progression?');
 
   for (let i = 0; i <= 2; i += 1) {
@@ -151,7 +151,7 @@ const brainProgression = () => {
 // Code for 'Brain-Prime' game:
 const brainPrime = () => {
   const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello ${userName}!`);
+  console.log(`Hello, ${userName}!`);
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
   for (let i = 0; i <= 2; i += 1) {

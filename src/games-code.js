@@ -23,7 +23,7 @@ const brainEven = () => {
     const currentNumber = getRandomInteger();
     console.log(`Question: ${currentNumber}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    
+
     if ((currentNumber % 2 === 0) && (userAnswer === 'yes')) {
       console.log('Correct!');
     } else if ((currentNumber % 2 !== 0) && (userAnswer === 'no')) {
@@ -58,7 +58,7 @@ const brainCalc = () => {
     const currentNumber2 = getRandomInteger();
     const currentSymbol = getRandomSymbol();
     const currentMathExpression = `${currentNumber1} ${currentSymbol} ${currentNumber2}`;
-    
+
     let currentCorrectAnswer = 0;
     if (currentSymbol === '+') {
       currentCorrectAnswer = currentNumber1 + currentNumber2;
@@ -67,7 +67,7 @@ const brainCalc = () => {
     } else if (currentSymbol === '*') {
       currentCorrectAnswer = currentNumber1 * currentNumber2;
     }
-    
+
     console.log(`Question: ${currentMathExpression}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
@@ -82,4 +82,35 @@ const brainCalc = () => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-export { brainCalc, brainEven };
+// Code for 'Brain-GCD' game:
+const brainGcd = () => {
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello ${userName}!`);
+  console.log('Find the greatest common divisor of given numbers.');
+
+  for (let i = 0; i <= 2; i += 1) {
+    let currentNumber1 = getRandomInteger();
+    let currentNumber2 = getRandomInteger();
+
+    console.log(`Question: ${currentNumber1} ${currentNumber2}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+
+    while (currentNumber2 !== 0) {
+      let tmp = currentNumber2;
+      currentNumber2 = currentNumber1 % currentNumber2;
+      currentNumber1 = tmp;
+    }
+    const currentCorrectAnswer = currentNumber1;
+  
+    if (userAnswer === currentCorrectAnswer.toString()) {
+      console.log('Correct!');
+    } else {
+      console.log(`'${userAnswer}' is wrong answer :( Correct answer was '${currentCorrectAnswer}'`);
+      console.log(`Let's try again, ${userName}`)
+      return;
+    }
+  }
+  console.log(`Congratulations, ${userName}!`);
+};
+
+export { brainCalc, brainEven, brainGcd };

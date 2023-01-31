@@ -3,6 +3,7 @@
   "bin": {
     "brain-even": "bin/brain-even.js",
     "brain-calc": "bin/brain-calc.js",
+    "brain-gcd": "bin/brain-gcd.js",
     "brain-games": "bin/brain-games.js"
   },
   "type": "module",

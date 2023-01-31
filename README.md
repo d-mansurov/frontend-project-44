@@ -11,3 +11,7 @@ https://asciinema.org/a/az5bQIx3WJhhHQgfjJPuhF2aC
 # Here you can check the example of 'Brain calc' game:
 
 https://asciinema.org/a/tk1baeC8oMQtmUO6kyR8BgZqV
+
+# Here you can check the example of 'Brain GCD' game:
+
+https://asciinema.org/a/olK5LJBsQz2RmymIYC3mAmCDZ

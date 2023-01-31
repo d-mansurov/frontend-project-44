@@ -19,3 +19,7 @@ https://asciinema.org/a/olK5LJBsQz2RmymIYC3mAmCDZ
 # Here you can check the example of 'Brain progression' game:
 
 https://asciinema.org/a/aHgfJ9jTBH9bW01cSNSKsQd7e
+
+# Here you can check the example of 'Brain prime' game:
+
+https://asciinema.org/a/CufsJV31UBoP162JKRio0oodr

@@ -38,20 +38,18 @@ const brainEven = () => {
       console.log('Correct!');
     } else if ((currentNumber % 2 !== 0) && (userAnswer === 'no')) {
       console.log('Correct!');
+    } else if ((currentNumber % 2 !== 0) && (userAnswer === 'yes')) {
+      console.log(`'${userAnswer}' is wrong answer :( Correct answer was 'no'`);
+      console.log(`Let's try again, ${userName}`);
+      return;
+    } else if ((currentNumber % 2 === 0) && (userAnswer === 'no')) {
+      console.log(`'${userAnswer}' is wrong answer :( Correct answer was 'yes'`);
+      console.log(`Let's try again, ${userName}`);
+      return;
     } else {
-      if (userAnswer === 'yes') {
-        console.log(`'${userAnswer}' is wrong answer :( Correct answer was 'no'`);
-        console.log(`Let's try again, ${userName}`);
-        return;
-      } else if (userAnswer === 'no') {
-        console.log(`'${userAnswer}' is wrong answer :( Correct answer was 'yes'`);
-        console.log(`Let's try again, ${userName}`);
-        return;
-      } else {
-        console.log(`There is no such asnwer '${userAnswer}' :( You should type 'yes' or 'no'`);
-        console.log(`Let's try again, ${userName}`);
-        return;
-      }
+      console.log(`There is no such asnwer '${userAnswer}' :( You should type 'yes' or 'no'`);
+      console.log(`Let's try again, ${userName}`);
+      return;
     }
   }
   console.log(`Congratulations, ${userName}!`);
@@ -106,12 +104,12 @@ const brainGcd = () => {
     const userAnswer = readlineSync.question('Your answer: ');
 
     while (currentNumber2 !== 0) {
-      let tmp = currentNumber2;
+      const tmp = currentNumber2;
       currentNumber2 = currentNumber1 % currentNumber2;
       currentNumber1 = tmp;
     }
     const currentCorrectAnswer = currentNumber1;
-  
+
     if (userAnswer === currentCorrectAnswer.toString()) {
       console.log('Correct!');
     } else {
@@ -135,7 +133,7 @@ const brainProgression = () => {
     const currentElement = progression[currentElementPosition];
     progression[currentElementPosition] = '..';
     const joinedProgression = progression.join(' ');
-    
+
     console.log(`Question: ${joinedProgression}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
@@ -150,4 +148,51 @@ const brainProgression = () => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-export { brainCalc, brainEven, brainGcd, brainProgression };
+// Code for 'Brain-Prime' game:
+const brainPrime = () => {
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello ${userName}!`);
+  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+
+  for (let i = 0; i <= 2; i += 1) {
+    const currentNumber = getRandomInteger(2, 3571);
+
+    console.log(`Question: ${currentNumber}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+
+    const isPrime = (num) => {
+      if (num < 2) {
+        return false;
+      }
+      for (let j = 2; j < num; j += 1) {
+        if (num % j === 0) {
+          return false;
+        }
+      }
+      return true;
+    };
+
+    if ((isPrime(currentNumber) === true) && (userAnswer === 'yes')) {
+      console.log('Correct!');
+    } else if ((isPrime(currentNumber) === false) && (userAnswer === 'no')) {
+      console.log('Correct!');
+    } else if ((isPrime(currentNumber) === false) && (userAnswer === 'yes')) {
+      console.log(`'${userAnswer}' is wrong answer :( Correct answer was 'no'`);
+      console.log(`Let's try again, ${userName}`);
+      return;
+    } else if ((isPrime(currentNumber) === true) && (userAnswer === 'no')) {
+      console.log(`'${userAnswer}' is wrong answer :( Correct answer was 'yes'`);
+      console.log(`Let's try again, ${userName}`);
+      return;
+    } else {
+      console.log(`There is no such asnwer '${userAnswer}' :( You should type 'yes' or 'no'`);
+      console.log(`Let's try again, ${userName}`);
+      return;
+    }
+  }
+  console.log(`Congratulations, ${userName}!`);
+};
+
+export {
+  brainCalc, brainEven, brainGcd, brainProgression, brainPrime,
+};

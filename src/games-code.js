@@ -1,16 +1,26 @@
 import readlineSync from 'readline-sync';
 
-// Function that generates a random integer between 1 and 100:
-const getRandomInteger = () => {
-  const min = 1;
-  const max = 100;
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+// Function that generates a random integer between Min and Max:
+const getRandomInteger = (min, max) => {
+  const result = Math.floor(Math.random() * (max - min + 1)) + min;
+  return result;
 };
 
 // Function that generates a random math symbol:
 const getRandomSymbol = () => {
   const symbols = ['+', '-', '*'];
   return symbols[Math.floor(Math.random() * symbols.length)];
+};
+
+// Function that generates a random arithmetic progression:
+const getRandomProgression = (length, commonDifference) => {
+  const progression = [];
+  let element = Math.floor(Math.random() * 100);
+  for (let i = 0; i < length; i += 1) {
+    progression.push(element);
+    element += commonDifference;
+  }
+  return progression;
 };
 
 // Code for 'Brain-Even' game:
@@ -20,7 +30,7 @@ const brainEven = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
   for (let i = 0; i <= 2; i += 1) {
-    const currentNumber = getRandomInteger();
+    const currentNumber = getRandomInteger(1, 100);
     console.log(`Question: ${currentNumber}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
@@ -31,15 +41,15 @@ const brainEven = () => {
     } else {
       if (userAnswer === 'yes') {
         console.log(`'${userAnswer}' is wrong answer :( Correct answer was 'no'`);
-        console.log(`Let's try again, ${userName}`)
+        console.log(`Let's try again, ${userName}`);
         return;
       } else if (userAnswer === 'no') {
         console.log(`'${userAnswer}' is wrong answer :( Correct answer was 'yes'`);
-        console.log(`Let's try again, ${userName}`)
+        console.log(`Let's try again, ${userName}`);
         return;
       } else {
         console.log(`There is no such asnwer '${userAnswer}' :( You should type 'yes' or 'no'`);
-        console.log(`Let's try again, ${userName}`)
+        console.log(`Let's try again, ${userName}`);
         return;
       }
     }
@@ -54,8 +64,8 @@ const brainCalc = () => {
   console.log('What is the result of the expression?');
 
   for (let i = 0; i <= 2; i += 1) {
-    const currentNumber1 = getRandomInteger();
-    const currentNumber2 = getRandomInteger();
+    const currentNumber1 = getRandomInteger(1, 100);
+    const currentNumber2 = getRandomInteger(1, 100);
     const currentSymbol = getRandomSymbol();
     const currentMathExpression = `${currentNumber1} ${currentSymbol} ${currentNumber2}`;
 
@@ -75,7 +85,7 @@ const brainCalc = () => {
       console.log('Correct!');
     } else {
       console.log(`'${userAnswer}' is wrong answer :( Correct answer was '${currentCorrectAnswer}'`);
-      console.log(`Let's try again, ${userName}`)
+      console.log(`Let's try again, ${userName}`);
       return;
     }
   }
@@ -89,8 +99,8 @@ const brainGcd = () => {
   console.log('Find the greatest common divisor of given numbers.');
 
   for (let i = 0; i <= 2; i += 1) {
-    let currentNumber1 = getRandomInteger();
-    let currentNumber2 = getRandomInteger();
+    let currentNumber1 = getRandomInteger(1, 100);
+    let currentNumber2 = getRandomInteger(1, 100);
 
     console.log(`Question: ${currentNumber1} ${currentNumber2}`);
     const userAnswer = readlineSync.question('Your answer: ');
@@ -106,11 +116,38 @@ const brainGcd = () => {
       console.log('Correct!');
     } else {
       console.log(`'${userAnswer}' is wrong answer :( Correct answer was '${currentCorrectAnswer}'`);
-      console.log(`Let's try again, ${userName}`)
+      console.log(`Let's try again, ${userName}`);
       return;
     }
   }
   console.log(`Congratulations, ${userName}!`);
 };
 
-export { brainCalc, brainEven, brainGcd };
+// Code for 'Brain-Progression' game:
+const brainProgression = () => {
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello ${userName}!`);
+  console.log('What number is missing in the progression?');
+
+  for (let i = 0; i <= 2; i += 1) {
+    const progression = getRandomProgression(getRandomInteger(5, 10), getRandomInteger(1, 9));
+    const currentElementPosition = getRandomInteger(0, progression.length - 1);
+    const currentElement = progression[currentElementPosition];
+    progression[currentElementPosition] = '..';
+    const joinedProgression = progression.join(' ');
+    
+    console.log(`Question: ${joinedProgression}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+
+    if (userAnswer === currentElement.toString()) {
+      console.log('Correct!');
+    } else {
+      console.log(`'${userAnswer}' is wrong answer :( Correct answer was '${currentElement}'`);
+      console.log(`Let's try again, ${userName}`);
+      return;
+    }
+  }
+  console.log(`Congratulations, ${userName}!`);
+};
+
+export { brainCalc, brainEven, brainGcd, brainProgression };

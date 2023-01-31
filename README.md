@@ -15,3 +15,7 @@ https://asciinema.org/a/tk1baeC8oMQtmUO6kyR8BgZqV
 # Here you can check the example of 'Brain GCD' game:
 
 https://asciinema.org/a/olK5LJBsQz2RmymIYC3mAmCDZ
+
+# Here you can check the example of 'Brain progression' game:
+
+https://asciinema.org/a/aHgfJ9jTBH9bW01cSNSKsQd7e

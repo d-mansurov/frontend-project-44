@@ -24,7 +24,8 @@ const getRandomProgression = (length, commonDifference) => {
 };
 
 // Code for 'Brain-Even' game:
-const brainEven = () => {
+const isEven = () => {
+  console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
@@ -56,7 +57,8 @@ const brainEven = () => {
 };
 
 // Code for 'Brain-Calc' game:
-const brainCalc = () => {
+const calculateExpression = () => {
+  console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log('What is the result of the expression?');
@@ -91,7 +93,8 @@ const brainCalc = () => {
 };
 
 // Code for 'Brain-GCD' game:
-const brainGcd = () => {
+const calculateGcd = () => {
+  console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log('Find the greatest common divisor of given numbers.');
@@ -122,7 +125,8 @@ const brainGcd = () => {
 };
 
 // Code for 'Brain-Progression' game:
-const brainProgression = () => {
+const completeProgression = () => {
+  console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log('What number is missing in the progression?');
@@ -149,7 +153,8 @@ const brainProgression = () => {
 };
 
 // Code for 'Brain-Prime' game:
-const brainPrime = () => {
+const isPrime = () => {
+  console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
@@ -160,7 +165,7 @@ const brainPrime = () => {
     console.log(`Question: ${currentNumber}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
-    const isPrime = (num) => {
+    const isPrimeNum = (num) => {
       if (num < 2) {
         return false;
       }
@@ -172,15 +177,15 @@ const brainPrime = () => {
       return true;
     };
 
-    if ((isPrime(currentNumber) === true) && (userAnswer === 'yes')) {
+    if ((isPrimeNum(currentNumber) === true) && (userAnswer === 'yes')) {
       console.log('Correct!');
-    } else if ((isPrime(currentNumber) === false) && (userAnswer === 'no')) {
+    } else if ((isPrimeNum(currentNumber) === false) && (userAnswer === 'no')) {
       console.log('Correct!');
-    } else if ((isPrime(currentNumber) === false) && (userAnswer === 'yes')) {
+    } else if ((isPrimeNum(currentNumber) === false) && (userAnswer === 'yes')) {
       console.log(`'${userAnswer}' is wrong answer :( Correct answer was 'no'`);
       console.log(`Let's try again, ${userName}!`);
       return;
-    } else if ((isPrime(currentNumber) === true) && (userAnswer === 'no')) {
+    } else if ((isPrimeNum(currentNumber) === true) && (userAnswer === 'no')) {
       console.log(`'${userAnswer}' is wrong answer :( Correct answer was 'yes'`);
       console.log(`Let's try again, ${userName}!`);
       return;
@@ -194,5 +199,5 @@ const brainPrime = () => {
 };
 
 export {
-  brainCalc, brainEven, brainGcd, brainProgression, brainPrime,
+  calculateExpression, isEven, calculateGcd, completeProgression, isPrime,
 };

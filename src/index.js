@@ -8,7 +8,7 @@ const brainGamesMaster = (gameRule, gameConditions) => {
   console.log(gameRule);
 
   for (let i = 0; i <= 2; i += 1) {
-    const [gameQuestion, gameAnswer] = gameConditions;
+    const [gameQuestion, gameAnswer] = gameConditions();
 
     console.log(`Question: ${gameQuestion}`);
     const userAnswer = readlineSync.question('Your answer: ');

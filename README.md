@@ -5,9 +5,13 @@ It is a set of five console games built on the principle of popular mobile apps 
 The list of games is following:
 
 > Calculator - arithmetic expressions that have to be calculated.
+
 > Progression - search for missing numbers in a sequence of numbers.
+
 > Even number - check whether the number is even or not.
+
 > GCD - determine the Greatest Common Divisor of the given numbers.
+
 > Prime number - check whether the number if prime or not.
 
 ## This is how to install the Brain Games on your computer:

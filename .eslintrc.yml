@@ -4,7 +4,6 @@ plugins:
   - jest
 extends:
   - airbnb-base
-  - plugin:jest/recommended
 overrides: []
 parserOptions:
   ecmaVersion: latest

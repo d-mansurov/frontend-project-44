@@ -1,12 +1,22 @@
-import { getRandomInteger, getRandomSymbol } from '../common-functions.js';
-import brainGamesMaster from '../index.js';
+import getRandomInteger from '../common-functions.js';
+import runBrainGamesMaster from '../index.js';
 
 const gameRule = 'What is the result of the expression?';
 
+// Function that generates a random math symbol:
+const getRandomSymbol = () => {
+  const symbols = ['+', '-', '*'];
+  return symbols[Math.floor(Math.random() * symbols.length)];
+};
+
 const getGameConditions = () => {
-  const currentNumber1 = getRandomInteger(1, 100);
-  const currentNumber2 = getRandomInteger(1, 100);
+  const minIntervalValue = 1;
+  const maxIntervalValue = 100;
+  const currentNumber1 = getRandomInteger(minIntervalValue, maxIntervalValue);
+  const currentNumber2 = getRandomInteger(minIntervalValue, maxIntervalValue);
+
   const currentSymbol = getRandomSymbol();
+
   const currentMathExpression = `${currentNumber1} ${currentSymbol} ${currentNumber2}`;
 
   let currentCorrectAnswer = 0;
@@ -18,14 +28,11 @@ const getGameConditions = () => {
     currentCorrectAnswer = currentNumber1 * currentNumber2;
   }
 
-  const gameQuestion = currentMathExpression;
-  const gameAnswer = currentCorrectAnswer;
-
-  return [gameQuestion, gameAnswer];
+  return [currentMathExpression, `${currentCorrectAnswer}`];
 };
 
-const calculateExpressionGame = () => {
-  brainGamesMaster(gameRule, getGameConditions);
+const runExpressionGame = () => {
+  runBrainGamesMaster(gameRule, getGameConditions);
 };
 
-export default calculateExpressionGame;
+export default runExpressionGame;

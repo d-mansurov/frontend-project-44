@@ -1,26 +1,20 @@
-import { getRandomInteger } from '../common-functions.js';
-import brainGamesMaster from '../index.js';
+import getRandomInteger from '../common-functions.js';
+import runBrainGamesMaster from '../index.js';
 
 const gameRule = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const getGameConditions = () => {
-  const currentNumber = getRandomInteger(1, 100);
-  let currentAnswer = '';
+  const minIntervalValue = 1;
+  const maxIntervalValue = 100;
+  const currentNumber = getRandomInteger(minIntervalValue, maxIntervalValue);
 
-  if (currentNumber % 2 === 0) {
-    currentAnswer = 'yes';
-  } else {
-    currentAnswer = 'no';
-  }
+  const currentAnswer = (currentNumber % 2 === 0) ? 'yes' : 'no';
 
-  const gameQuestion = currentNumber;
-  const gameAnswer = currentAnswer;
-
-  return [gameQuestion, gameAnswer];
+  return [currentNumber, `${currentAnswer}`];
 };
 
-const isEvenGame = () => {
-  brainGamesMaster(gameRule, getGameConditions);
+const runIsEvenGame = () => {
+  runBrainGamesMaster(gameRule, getGameConditions);
 };
 
-export default isEvenGame;
+export default runIsEvenGame;

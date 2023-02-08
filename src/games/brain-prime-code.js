@@ -2,6 +2,8 @@ import getRandomInteger from '../common-functions.js';
 import runBrainGamesMaster from '../index.js';
 
 const gameRule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const minIntervalValue = 2;
+const maxIntervalValue = 3571;
 
 // Function that checks whether the number is prime
 const isPrimeNum = (num) => {
@@ -17,9 +19,6 @@ const isPrimeNum = (num) => {
 };
 
 const getGameConditions = () => {
-  const minIntervalValue = 2;
-  const maxIntervalValue = 3571;
-
   const currentNumber = getRandomInteger(minIntervalValue, maxIntervalValue);
   const currentAnswer = isPrimeNum(currentNumber) === true ? 'yes' : 'no';
 

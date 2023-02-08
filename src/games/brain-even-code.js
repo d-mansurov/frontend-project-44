@@ -2,13 +2,17 @@ import getRandomInteger from '../common-functions.js';
 import runBrainGamesMaster from '../index.js';
 
 const gameRule = 'Answer "yes" if the number is even, otherwise answer "no".';
+const minIntervalValue = 1;
+const maxIntervalValue = 100;
+
+const isEven = (number) => {
+  const result = (number % 2 === 0) ? 'yes' : 'no';
+  return result;
+};
 
 const getGameConditions = () => {
-  const minIntervalValue = 1;
-  const maxIntervalValue = 100;
   const currentNumber = getRandomInteger(minIntervalValue, maxIntervalValue);
-
-  const currentAnswer = (currentNumber % 2 === 0) ? 'yes' : 'no';
+  const currentAnswer = isEven(currentNumber);
 
   return [currentNumber, `${currentAnswer}`];
 };

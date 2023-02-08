@@ -2,29 +2,28 @@ import getRandomInteger from '../common-functions.js';
 import runBrainGamesMaster from '../index.js';
 
 const gameRule = 'What number is missing in the progression?';
+const minCommonDifference = 1;
+const maxCommonDifference = 9;
+const minProgressionLength = 5;
+const maxProgressionLength = 10;
+const minProgressionElement = 0;
+const maxProgressionElement = 99;
 
 // Function that generates a random arithmetic progression:
 const getRandomProgression = (length, commonDifference) => {
   const progression = [];
-  const randomNumber = Math.random() * 100;
-  let element = Math.floor(randomNumber);
+  let randomNumber = getRandomInteger(minProgressionElement, maxProgressionElement);
 
   for (let i = 0; i < length; i += 1) {
-    progression.push(element);
-    element += commonDifference;
+    progression.push(randomNumber);
+    randomNumber += commonDifference;
   }
   return progression;
 };
 
 const getGameConditions = () => {
-  const minProgressionLength = 5;
-  const maxProgressionLength = 10;
   const progressionLength = getRandomInteger(minProgressionLength, maxProgressionLength);
-
-  const minCommonDifference = 1;
-  const maxCommonDifference = 9;
   const commonDifference = getRandomInteger(minCommonDifference, maxCommonDifference);
-
   const progression = getRandomProgression(progressionLength, commonDifference);
 
   const currentElementPosition = getRandomInteger(0, progression.length - 1);

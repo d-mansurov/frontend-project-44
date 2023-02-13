@@ -10,9 +10,9 @@ const minProgressionElement = 0;
 const maxProgressionElement = 99;
 
 // Function that generates a random arithmetic progression:
-const getRandomProgression = (length, commonDifference) => {
+const getRandomProgression = (length, commonDifference, progressionElement) => {
   const progression = [];
-  let randomNumber = getRandomInteger(minProgressionElement, maxProgressionElement);
+  let randomNumber = progressionElement;
 
   for (let i = 0; i < length; i += 1) {
     progression.push(randomNumber);
@@ -24,7 +24,8 @@ const getRandomProgression = (length, commonDifference) => {
 const getGameConditions = () => {
   const progressionLength = getRandomInteger(minProgressionLength, maxProgressionLength);
   const commonDifference = getRandomInteger(minCommonDifference, maxCommonDifference);
-  const progression = getRandomProgression(progressionLength, commonDifference);
+  const progressionElement = getRandomInteger(minProgressionElement, maxProgressionElement);
+  const progression = getRandomProgression(progressionLength, commonDifference, progressionElement);
 
   const currentElementPosition = getRandomInteger(0, progression.length - 1);
   const currentElement = progression[currentElementPosition];

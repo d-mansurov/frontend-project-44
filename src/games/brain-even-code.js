@@ -6,13 +6,13 @@ const minIntervalValue = 1;
 const maxIntervalValue = 100;
 
 const isEven = (number) => {
-  const result = (number % 2 === 0) ? 'yes' : 'no';
+  const result = (number % 2 === 0);
   return result;
 };
 
 const getGameConditions = () => {
   const currentNumber = getRandomInteger(minIntervalValue, maxIntervalValue);
-  const currentAnswer = isEven(currentNumber);
+  const currentAnswer = isEven(currentNumber) === true ? 'yes' : 'no';
 
   return [currentNumber, `${currentAnswer}`];
 };
